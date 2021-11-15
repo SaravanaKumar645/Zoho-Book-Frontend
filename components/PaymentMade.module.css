@@ -1,0 +1,19 @@
+.navhead {
+    margin-top: 80px;
+    margin-left: 220px;
+  }
+  .refresh {
+    width: 10%;
+    height: 15%;
+  }
+  .setting {
+    width: 10%;
+    height: 15%;
+  }
+  
+  .head {
+    display: flex; 
+  }
+  .headside {
+    margin-left: 700px;
+  }

@@ -1,0 +1,122 @@
+.List {
+  color: white;
+}
+.List:hover {
+  color: white;
+  background-color: #13b191;
+}
+.ListFocused {
+  color: #1abc9c;
+  background-color: black;
+}
+.ListFocused:hover {
+  opacity: 0.8;
+  background-color: black;
+}
+.iconList {
+  color: white;
+}
+.iconListFocused {
+  color: #1abc9c;
+}
+
+/* Header */
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.headerContent .IconsandSearch svg {
+  height: 22px;
+  width: 22px;
+}
+.headerContent .IconsandSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3ch;
+}
+.IconsandSearch .searchInputBox {
+  cursor: text;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding-left: 9px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 23px;
+  width: 330px;
+}
+.searchInputBox svg {
+  cursor: pointer;
+}
+.searchInputBox input {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 23px;
+  text-align: start;
+  padding-left: 15px;
+}
+.searchInputBox:hover {
+  border: 1px solid dodgerblue;
+}
+.headerContent .InfoandIconList {
+  display: flex;
+  align-items: center;
+  gap: 2.4ch;
+  justify-content: center;
+}
+.InfoandIconList .pTrial {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+  justify-content: center;
+  margin: 0;
+}
+.pTrial span {
+  cursor: pointer;
+  color: #2485e8;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.pTrial span:hover {
+  opacity: 1;
+}
+.InfoandIconList .pCompany {
+  display: flex;
+  gap: 0.5ch;
+  cursor: pointer;
+  align-items: center;
+  margin: 0;
+  font-size: 14px;
+}
+.headerContent .InfoandIconList .pCompany svg {
+  height: 10px;
+  width: 11px;
+  transform: translateY(2px);
+}
+.InfoandIconList .headerIconList {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: center;
+  gap: 2ch;
+}
+.InfoandIconList .headerIconList svg {
+  height: 18px;
+  cursor: pointer;
+  width: 20px;
+  fill: black;
+}
+.InfoandIconList img {
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  object-fit: contain;
+  border-radius: 50px;
+  margin: 0;
+}
