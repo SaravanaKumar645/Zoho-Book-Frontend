@@ -25,7 +25,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { isAutheticated } from "../services/Auth";
 import { postpaymade } from "../services/Customers";
-
 import { getCus, getventor } from "../services/Customers";
 
 function createData(date, bill, purchaseorder, billamount, amountdue, payment) {
@@ -38,8 +37,26 @@ function Addpayment(props) {
   //try
 
   const { user } = isAutheticated();
-
   const [vendor, setVendor] = useState();
+  const [value, setValue] = useState("1");
+  const [values, setValues] = useState({
+    vendor_name: "",
+    amount: "",
+    vemail: "",
+    payment_date: "",
+    payment_mode: "",
+    payment_through: "",
+    reference: "",
+  });
+  const {
+    vendor_name,
+    amount,
+    vemail,
+    payment_date,
+    payment_mode,
+    payment_through,
+    reference,
+  } = values;
 
   useEffect(() => {
     console.log(user._id);
@@ -50,27 +67,6 @@ function Addpayment(props) {
       })
       .catch(console.log("Get Trpis request"));
   }, []);
-
-  const [value, setValue] = useState("1");
-  const [values, setValues] = useState({
-    vendor_name: "",
-    amount: "",
-    vemail: vemail,
-    payment_date: "",
-    payment_mode: "",
-    payment_through: "",
-    reference: "",
-  });
-
-  const {
-    vendor_name,
-    amount,
-    vemail,
-    payment_date,
-    payment_mode,
-    payment_through,
-    reference,
-  } = values;
 
   console.log(values);
 

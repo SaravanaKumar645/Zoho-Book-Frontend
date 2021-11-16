@@ -4,7 +4,6 @@ export default function Homeinvoices() {
   return (
     <div>
       <Header />
-
       <InvoicesHome />
     </div>
   );
