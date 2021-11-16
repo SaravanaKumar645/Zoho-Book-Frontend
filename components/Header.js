@@ -195,7 +195,7 @@ function Header(props) {
           {collapseOpen[0].item ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].item} timeout="auto" unmountOnExit>
-          <List component="div">
+          <List>
             <ListItemButton
               id={tabPath === "/items" ? styles["ListFocused"] : styles["List"]}
               sx={{ pl: 4 }}
@@ -261,6 +261,7 @@ function Header(props) {
         </ListItemButton>
         <Collapse in={collapseOpen[0].sales} timeout="auto" unmountOnExit>
           <List component="div">
+            {/* disablePadding */}
             <ListItemButton
               id={
                 tabPath === "/customer" ? styles["ListFocused"] : styles["List"]
@@ -405,7 +406,8 @@ function Header(props) {
           {collapseOpen[0].purchase ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].purchase} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div" disablePadding={false}>
+            {/* disablePadding */}
             <ListItemButton
               id={
                 tabPath === "/vendor" ? styles["ListFocused"] : styles["List"]
