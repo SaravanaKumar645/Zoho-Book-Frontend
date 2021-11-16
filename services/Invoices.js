@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = `http://localhost:4000/invoices`;
+const API_URL = "https://zoho-books-server.herokuapp.com/invoices";
 
 class Invoices {
   getAllInvoices() {

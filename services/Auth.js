@@ -1,5 +1,6 @@
+const API_URL = "https://zoho-books-server.herokuapp.com";
 export const signup = (user) => {
-  return fetch("http://localhost:4000/api/signup", {
+  return fetch("https://zoho-books-server.herokuapp.com/api/signup", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -14,7 +15,7 @@ export const signup = (user) => {
 };
 
 export const signin = async (user) => {
-  return await fetch("http://localhost:4000/api/login", {
+  return await fetch("https://zoho-books-server.herokuapp.com/api/login", {
     method: "POST",
     headers: {
       Accept: "application/json",
