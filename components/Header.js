@@ -17,7 +17,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { Tooltip, tooltipClasses } from "@mui/material";
+import { ListItemAvatar, Tooltip, tooltipClasses } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -195,8 +195,8 @@ function Header(props) {
           {collapseOpen[0].item ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].item} timeout="auto" unmountOnExit>
-          <List>
-            <ListItemButton
+          <List disablePadding={false}>
+            <ListItem
               id={tabPath === "/items" ? styles["ListFocused"] : styles["List"]}
               sx={{ pl: 4 }}
               component={Link}
@@ -219,35 +219,35 @@ function Header(props) {
                 }
                 primary="Items"
               />
-            </ListItemButton>
+            </ListItem>
           </List>
         </Collapse>
-      </List>
-      <ListItem
-        id={tabPath === "/banking" ? styles["ListFocused"] : styles["List"]}
-        button
-        component={Link}
-        href="/banking"
-      >
-        <ListItemIcon
-          id={
-            tabPath === "/banking"
-              ? styles["iconListFocused"]
-              : styles["iconList"]
-          }
+        <ListItem
+          id={tabPath === "/banking" ? styles["ListFocused"] : styles["List"]}
+          button
+          component={Link}
+          href="/banking"
         >
-          <Home />
-        </ListItemIcon>
-        <ListItemText
-          id={
-            tabPath === "/banking"
-              ? styles["iconListFocused"]
-              : styles["iconList"]
-          }
-          primary="Banking"
-        />
-      </ListItem>
-      <Divider />
+          <ListItemIcon
+            id={
+              tabPath === "/banking"
+                ? styles["iconListFocused"]
+                : styles["iconList"]
+            }
+          >
+            <Home />
+          </ListItemIcon>
+          <ListItemText
+            id={
+              tabPath === "/banking"
+                ? styles["iconListFocused"]
+                : styles["iconList"]
+            }
+            primary="Banking"
+          />
+        </ListItem>
+        <Divider />
+      </List>
       <List>
         <ListItemButton
           id={styles.List}

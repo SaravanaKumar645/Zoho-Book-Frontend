@@ -10,7 +10,6 @@ function BAnking() {
   return (
     <div style={{ display: "flex" }}>
       <Header />
-
       <div
         style={{
           display: "flex",

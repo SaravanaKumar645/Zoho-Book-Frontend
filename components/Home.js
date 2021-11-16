@@ -8,7 +8,6 @@ import Header from "./Header";
 export default function Home() {
   return (
     <div style={{ display: "flex" }}>
-      <Header />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Grid item xs={12} md={8} lg={11}>

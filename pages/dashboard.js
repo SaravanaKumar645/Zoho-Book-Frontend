@@ -5,6 +5,7 @@ import Home from "../components/Home";
 export default function MainComponent() {
   return (
     <div style={{ display: "flex" }}>
+      <Header />
       <Home />
     </div>
   );
