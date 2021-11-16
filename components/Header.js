@@ -158,7 +158,7 @@ function Header(props) {
         ></img>
       </Toolbar>
       <Divider />
-      <List>
+      <List style={{ color: "white" }}>
         <ListItem
           button
           component={Link}
@@ -187,6 +187,7 @@ function Header(props) {
         </ListItem>
         <ListItemButton
           className={styles.List}
+          color="white"
           onClick={(e) => handleCollapaseOpen(e, "items")}
         >
           <ListItemIcon className={styles.iconList}>
@@ -196,7 +197,7 @@ function Header(props) {
           {collapseOpen[0].item ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].item} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div">
             <ListItemButton
               className={
                 tabPath === "/items" ? styles["ListFocused"] : styles["List"]
@@ -265,7 +266,7 @@ function Header(props) {
           {collapseOpen[0].sales ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].sales} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div">
             <ListItemButton
               className={
                 tabPath === "/customer" ? styles["ListFocused"] : styles["List"]
