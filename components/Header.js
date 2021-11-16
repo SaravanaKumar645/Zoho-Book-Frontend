@@ -3,7 +3,7 @@ import {
   Dashboard,
   ExpandLess,
   ExpandMore,
-  FlashAuto,
+  MonetizationOn,
   Home,
   People,
   PeopleAlt,
@@ -16,7 +16,7 @@ import {
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
 import { ListItemAvatar, Tooltip, tooltipClasses } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -510,6 +510,30 @@ function Header(props) {
             </ListItemButton>
           </List>
         </Collapse>
+        <ListItem
+          button
+          component={Link}
+          href="/payroll"
+          id={tabPath === "/payroll" ? styles["ListFocused"] : styles["List"]}
+        >
+          <ListItemIcon
+            id={
+              tabPath === "/payroll"
+                ? styles["iconListFocused"]
+                : styles["iconList"]
+            }
+          >
+            <MonetizationOn />
+          </ListItemIcon>
+          <ListItemText
+            id={
+              tabPath === "/payroll"
+                ? styles["iconListFocused"]
+                : styles["iconList"]
+            }
+            primary="Payroll"
+          />
+        </ListItem>
       </List>
     </div>
   );
