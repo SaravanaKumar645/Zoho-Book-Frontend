@@ -63,6 +63,25 @@ function Header(props) {
     },
   ]);
 
+  React.useEffect(() => {
+    if (tabPath === "/items") {
+      handleCollapaseOpen(null, "items");
+    } else if (
+      tabPath === "/customer" ||
+      tabPath === "/estimate" ||
+      tabPath === "/sales" ||
+      tabPath === "/invoices" ||
+      tabPath === "/paymentrecived"
+    ) {
+      handleCollapaseOpen(null, "sales");
+    } else if (
+      tabPath === "/vendor" ||
+      tabPath === "/purchase" ||
+      tabPath === "/paymentmade"
+    ) {
+      handleCollapaseOpen(null, "purchase");
+    }
+  }, []);
   // *For Tooltip
   const BootstrapTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} arrow classes={{ popper: className }} />
