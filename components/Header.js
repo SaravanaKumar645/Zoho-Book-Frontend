@@ -163,12 +163,10 @@ function Header(props) {
           button
           component={Link}
           href="/dashboard"
-          className={
-            tabPath === "/dashboard" ? styles["ListFocused"] : styles["List"]
-          }
+          id={tabPath === "/dashboard" ? styles["ListFocused"] : styles["List"]}
         >
           <ListItemIcon
-            className={
+            id={
               tabPath === "/dashboard"
                 ? styles["iconListFocused"]
                 : styles["iconList"]
@@ -177,7 +175,7 @@ function Header(props) {
             <Dashboard />
           </ListItemIcon>
           <ListItemText
-            className={
+            id={
               tabPath === "/dashboard"
                 ? styles["iconListFocused"]
                 : styles["iconList"]
@@ -226,15 +224,13 @@ function Header(props) {
         </Collapse>
       </List>
       <ListItem
-        className={
-          tabPath === "/banking" ? styles["ListFocused"] : styles["List"]
-        }
+        id={tabPath === "/banking" ? styles["ListFocused"] : styles["List"]}
         button
         component={Link}
         href="/banking"
       >
         <ListItemIcon
-          className={
+          id={
             tabPath === "/banking"
               ? styles["iconListFocused"]
               : styles["iconList"]
@@ -243,7 +239,7 @@ function Header(props) {
           <Home />
         </ListItemIcon>
         <ListItemText
-          className={
+          id={
             tabPath === "/banking"
               ? styles["iconListFocused"]
               : styles["iconList"]
@@ -254,10 +250,10 @@ function Header(props) {
       <Divider />
       <List>
         <ListItemButton
-          className={styles.List}
+          id={styles.List}
           onClick={(e) => handleCollapaseOpen(e, "sales")}
         >
-          <ListItemIcon className={styles.iconList}>
+          <ListItemIcon id={styles.iconList}>
             <ShoppingCart />
           </ListItemIcon>
           <ListItemText primary="Sales" />
@@ -266,7 +262,7 @@ function Header(props) {
         <Collapse in={collapseOpen[0].sales} timeout="auto" unmountOnExit>
           <List component="div">
             <ListItemButton
-              className={
+              id={
                 tabPath === "/customer" ? styles["ListFocused"] : styles["List"]
               }
               sx={{ pl: 4 }}
@@ -274,7 +270,7 @@ function Header(props) {
               href="/customer"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/customer"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -283,7 +279,7 @@ function Header(props) {
                 <PeopleAlt />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/customer"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -292,7 +288,7 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/estimate" ? styles["ListFocused"] : styles["List"]
               }
               sx={{ pl: 4 }}
@@ -300,7 +296,7 @@ function Header(props) {
               href="/estimate"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/estimate"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -309,7 +305,7 @@ function Header(props) {
                 <Receipt />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/estimate"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -318,15 +314,13 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
-                tabPath === "/sales" ? styles["ListFocused"] : styles["List"]
-              }
+              id={tabPath === "/sales" ? styles["ListFocused"] : styles["List"]}
               sx={{ pl: 4 }}
               component={Link}
               href="/sales"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/sales"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -335,7 +329,7 @@ function Header(props) {
                 <AddShoppingCart />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/sales"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -344,7 +338,7 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/invoices" ? styles["ListFocused"] : styles["List"]
               }
               sx={{ pl: 4 }}
@@ -352,17 +346,17 @@ function Header(props) {
               href="/invoices"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/invoices"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
                 }
-                className={styles.iconList}
+                id={styles.iconList}
               >
                 <ReceiptLong />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/invoices"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -371,7 +365,7 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/paymentrecived"
                   ? styles["ListFocused"]
                   : styles["List"]
@@ -381,7 +375,7 @@ function Header(props) {
               href="/paymentrecived"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/paymentrecived"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -390,7 +384,7 @@ function Header(props) {
                 <PaymentIcon />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/paymentrecived"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -401,10 +395,10 @@ function Header(props) {
           </List>
         </Collapse>
         <ListItemButton
-          className={styles.List}
+          id={styles.List}
           onClick={(e) => handleCollapaseOpen(e, "purchase")}
         >
-          <ListItemIcon className={styles.iconList}>
+          <ListItemIcon id={styles.iconList}>
             <ShoppingBag />
           </ListItemIcon>
           <ListItemText primary="Purchases" />
@@ -413,7 +407,7 @@ function Header(props) {
         <Collapse in={collapseOpen[0].purchase} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/vendor" ? styles["ListFocused"] : styles["List"]
               }
               sx={{ pl: 4 }}
@@ -421,7 +415,7 @@ function Header(props) {
               href="/vendor"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/vendor"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -430,7 +424,7 @@ function Header(props) {
                 <People />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/vendor"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -439,7 +433,7 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/purchase" ? styles["ListFocused"] : styles["List"]
               }
               sx={{ pl: 4 }}
@@ -447,7 +441,7 @@ function Header(props) {
               href="/purchase"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/purchase"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -456,7 +450,7 @@ function Header(props) {
                 <Receipt />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/purchase"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -465,7 +459,7 @@ function Header(props) {
               />
             </ListItemButton>
             <ListItemButton
-              className={
+              id={
                 tabPath === "/paymentmade"
                   ? styles["ListFocused"]
                   : styles["List"]
@@ -475,7 +469,7 @@ function Header(props) {
               href="/paymentmade"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/paymentmade"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -485,7 +479,7 @@ function Header(props) {
               </ListItemIcon>
 
               <ListItemText
-                className={
+                id={
                   tabPath === "/paymentmade"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
