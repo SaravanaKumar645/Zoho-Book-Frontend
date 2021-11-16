@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import { useRouter } from "next/router";
-
 import { signin, authenticate, isAutheticated } from "../services/Auth";
-
 import Link from "next/link";
 import styles from "../styles/AuthForm.module.css";
 
@@ -16,7 +13,6 @@ const Signin = () => {
     loading: false,
     didRedirect: false,
   });
-
   const { email, password, error, loading, didRedirect } = values;
   const { user } = isAutheticated();
 
@@ -61,12 +57,6 @@ const Signin = () => {
 
   const errorMessage = () => {
     return (
-      // <div className="alertinvalid">
-      //   <div className="errormsg" style={{ display: values.error ? "" : "none" }}>
-      //     {values.error}
-      //   </div>
-      // </div>
-
       <div className="row">
         <div className="col-md-3 offset-sm-2 text-left">
           <div
@@ -116,15 +106,11 @@ const Signin = () => {
               Submit
             </button>
           </form>
-          <p>
+          <p className={styles.navigation}>
             Don't have an account yet?
-            <p style={{ color: "blue" }}>
-              {" "}
-              <Link href="/register" style={{ color: "blue" }}>
-                {" "}
-                Register
-              </Link>
-            </p>
+            <Link href="/register" style={{ color: "blue" }}>
+              <a>Register</a>
+            </Link>
           </p>
           {/* </div>
       </div> */}

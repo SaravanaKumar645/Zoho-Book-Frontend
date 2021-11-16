@@ -3,13 +3,9 @@ import EstimateHome from "../components/EstimateHome";
 export default function Homeestimate() {
   return (
     <div>
-        
-       <Header/>
+      <Header />
 
       <EstimateHome />
-
     </div>
-    
   );
-
 }

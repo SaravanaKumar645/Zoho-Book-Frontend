@@ -154,13 +154,14 @@ const template = {
 
 export default function NewRecurringInvoice(props) {
   const customHandleClick = () => {};
-
-  const [currency, setCurrency] = React.useState("Select Cusomer");
+  const [currency, setCurrency] = React.useState("Select Customer");
   const [weeks, setWeeks] = React.useState("Select");
   const [receipt, setReceipt] = React.useState("Select");
   const [fruit, setFruit] = React.useState("Apple");
   const [value, setValue] = React.useState(null);
   const [age, setAge] = React.useState("");
+
+  console.log(props.weekend);
 
   const handleChanged = (event) => {
     setAge(event.target.value);

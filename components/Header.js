@@ -149,7 +149,12 @@ function Header(props) {
       >
         <img
           src="/zoho-books-logo.png"
-          style={{ height: "30px", width: "150px", objectFit: "contain" }}
+          style={{
+            height: "30px",
+            width: "150px",
+            objectFit: "contain",
+            cursor: "pointer",
+          }}
         ></img>
       </Toolbar>
       <Divider />

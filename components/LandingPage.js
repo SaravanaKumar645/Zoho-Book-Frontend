@@ -18,29 +18,29 @@ export default function Landingpage() {
         />
       </Head>
 
-      <nav class="navbar sticky-top" style={{ background: "white" }}>
-        <a class="navbar-brand" href="#">
+      <nav className="navbar sticky-top" style={{ background: "white" }}>
+        <a className="navbar-brand" href="#">
           <Image
             src="/logo.png"
             alt=""
             width={180}
             height={60}
-            class="d-inline-block align-text-top"
+            className="d-inline-block align-text-top"
           ></Image>
         </a>
-        <ul class="nav justify-content-end">
+        <ul className="nav justify-content-end">
           <Image
             src="/india.png"
             alt=""
             width={30}
             height={20}
-            srcset=""
+            srcSet=""
           ></Image>
           <p>Toll Free - 18005726671</p>
 
-          <li class="nav-item dropdown">
+          <li className="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdownMenuLink"
               role="button"
@@ -49,32 +49,35 @@ export default function Landingpage() {
             >
               Features
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Another action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Something else here
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="#">
               Pricing
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li className="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdownMenuLink"
               role="button"
@@ -83,27 +86,30 @@ export default function Landingpage() {
             >
               Resources
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Another action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Something else here
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li className="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdownMenuLink2"
               role="button"
@@ -112,19 +118,22 @@ export default function Landingpage() {
             >
               More
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul
+              className="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Another action
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Something else here
                 </a>
               </li>
@@ -167,11 +176,11 @@ export default function Landingpage() {
         <br />
         <br />
 
-        <Image src="/videos.png" height={800} width={1050} alt="" srcset="" />
+        <Image src="/videos.png" height={800} width={1050} alt="" srcSet="" />
         <br />
         <br />
         <br />
-        <Image src="/winner.png" height={140} width={600} alt="" srcset="" />
+        <Image src="/winner.png" height={140} width={600} alt="" srcSet="" />
         <br />
         <p style={{ fontWeight: "500px", fontSize: "23px" }}>
           Recognised by the Government of India as the Best App in the Business
@@ -188,22 +197,22 @@ export default function Landingpage() {
         <br />
         <br />
         <br />
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="card" style={{ width: "18rem", padding: "20px" }}>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="card" style={{ width: "18rem", padding: "20px" }}>
                 <Image
                   src="/picture1.svg"
                   width={180}
                   height={60}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
-                <div class="card-body">
-                  <h3 style={{ marginTop: "30px" }} class="card-title">
+                <div className="card-body">
+                  <h3 style={{ marginTop: "30px" }} className="card-title">
                     End-to-end accounting
                   </h3>
-                  <p style={{ marginTop: "20px" }} class="card-text">
+                  <p style={{ marginTop: "20px" }} className="card-text">
                     Right from negotiating deals to raising sales orders and
                     invoicing, Zoho Books handles mundane accounting tasks so
                     you can focus on your business.
@@ -211,9 +220,9 @@ export default function Landingpage() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <div
-                class="card"
+                className="card"
                 style={{ width: "18rem", padding: "20px", height: "400px" }}
               >
                 <Image
@@ -221,13 +230,13 @@ export default function Landingpage() {
                   width={180}
                   height={60}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
-                <div class="card-body">
-                  <h3 style={{ marginTop: "30px" }} class="card-title">
+                <div className="card-body">
+                  <h3 style={{ marginTop: "30px" }} className="card-title">
                     GST compliance
                   </h3>
-                  <p class="card-text" style={{ marginTop: "20px" }}>
+                  <p className="card-text" style={{ marginTop: "20px" }}>
                     Create GST invoices, know your tax liability, and file your
                     tax returns directly. Zoho Books keeps your business GST
                     compliant.
@@ -235,9 +244,9 @@ export default function Landingpage() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <div
-                class="card"
+                className="card"
                 style={{ width: "18rem", padding: "20px", height: "400px" }}
               >
                 <Image
@@ -245,13 +254,13 @@ export default function Landingpage() {
                   width={180}
                   height={60}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
-                <div class="card-body">
-                  <h3 style={{ marginTop: "30px" }} class="card-title">
+                <div className="card-body">
+                  <h3 style={{ marginTop: "30px" }} className="card-title">
                     Integrated platform
                   </h3>
-                  <p style={{ marginTop: "20px" }} class="card-text">
+                  <p style={{ marginTop: "20px" }} className="card-text">
                     As your business grows, add more of Zoho's 40+ apps to help
                     you manage and run every aspect of your business from
                     wherever you are.
@@ -267,7 +276,7 @@ export default function Landingpage() {
 
       <section
         className={styles.sectionss}
-        class="animate__animated animate__fadeInRight"
+        className="animate__animated animate__fadeInRight"
       >
         <br />
         <br />
@@ -280,7 +289,7 @@ export default function Landingpage() {
               width={200}
               height={150}
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
           <div>
@@ -304,7 +313,7 @@ export default function Landingpage() {
           width="16"
           height="16"
           fill="currentColor"
-          class="bi bi-record"
+          className="bi bi-record"
           viewBox="0 0 16 16"
         >
           <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
@@ -314,7 +323,7 @@ export default function Landingpage() {
           width="16"
           height="16"
           fill="currentColor"
-          class="bi bi-record"
+          className="bi bi-record"
           viewBox="0 0 16 16"
         >
           <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
@@ -336,16 +345,16 @@ export default function Landingpage() {
         </div>
         <br />
         <br />
-        <div class="row">
-          <div class="col animate__animated animate__fadeInLeft">
+        <div className="row">
+          <div className="col animate__animated animate__fadeInLeft">
             <img
               src="https://www.zoho.com/in/books/images/accounting_software_contact_management_feature_1x.webp"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </div>
           <div
-            class="col animate__animated animate__fadeInRight"
+            className="col animate__animated animate__fadeInRight"
             style={{
               fontWeight: "400",
               justifyContent: "left",
@@ -364,7 +373,7 @@ export default function Landingpage() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-check-lg"
+                className="bi bi-check-lg"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
@@ -377,7 +386,7 @@ export default function Landingpage() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-check-lg"
+                className="bi bi-check-lg"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
@@ -390,7 +399,7 @@ export default function Landingpage() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-check-lg"
+                className="bi bi-check-lg"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
@@ -405,11 +414,11 @@ export default function Landingpage() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-arrow-right"
+                className="bi bi-arrow-right"
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                 />
               </svg>
@@ -425,28 +434,28 @@ export default function Landingpage() {
         <br />
         <br />
         <div className="container">
-          <div class="row">
-            <div class="col">
+          <div className="row">
+            <div className="col">
               <div
-                class="card mb-3"
+                className="card mb-3"
                 style={{ border: "none", width: "550px", textAlign: "left" }}
               >
-                <div class="row g-0">
-                  <div class="col-md-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
                     <Image
                       src="/picture5.svg"
                       width={150}
                       height={200}
-                      class="img-fluid rounded-start"
+                      className="img-fluid rounded-start"
                       alt="..."
                     ></Image>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">
                         GST treatment for items and contacts
                       </h5>
-                      <p class="card-text">
+                      <p className="card-text">
                         Zoho Books lets you associate HSN/SAC codes with your
                         goods and services and record the GSTINs for contacts at
                         the time of creation. The next time you generate a
@@ -458,25 +467,25 @@ export default function Landingpage() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <div
-                class="card mb-3"
+                className="card mb-3"
                 style={{ border: "none", width: "550px", textAlign: "left" }}
               >
-                <div class="row g-0">
-                  <div class="col-md-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
                     <Image
                       src="/picture6.svg"
                       width={150}
                       height={200}
-                      class="img-fluid rounded-start"
+                      className="img-fluid rounded-start"
                       alt="..."
                     ></Image>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">GST in transactions</h5>
-                      <p class="card-text">
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">GST in transactions</h5>
+                      <p className="card-text">
                         Get a grip on your taxes with Zoho Books. From place of
                         supply to GST levied on goods and services, display all
                         relevant details in your bills and invoices so your
@@ -488,26 +497,28 @@ export default function Landingpage() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
+          <div className="row">
+            <div className="col">
               <div
-                class="card mb-3"
+                className="card mb-3"
                 style={{ border: "none", width: "550px", textAlign: "left" }}
               >
-                <div class="row g-0">
-                  <div class="col-md-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
                     <Image
                       src="/picture7.svg"
                       width={150}
                       height={200}
-                      class="img-fluid rounded-start"
+                      className="img-fluid rounded-start"
                       alt="..."
                     ></Image>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">e-Way bills for consignments</h5>
-                      <p class="card-text">
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        e-Way bills for consignments
+                      </h5>
+                      <p className="card-text">
                         Create e-Way bills from within your accounting software.
                         Zoho Books automatically detects transactions that
                         require e-Way bills and helps you capture the e-Way bill
@@ -518,25 +529,25 @@ export default function Landingpage() {
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div className="col">
               <div
-                class="card mb-3"
+                className="card mb-3"
                 style={{ border: "none", width: "550px", textAlign: "left" }}
               >
-                <div class="row g-0">
-                  <div class="col-md-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
                     <Image
                       src="/picture8.svg"
                       width={150}
                       height={200}
-                      class="img-fluid rounded-start"
+                      className="img-fluid rounded-start"
                       alt="..."
                     ></Image>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">On-time returns filing</h5>
-                      <p class="card-text">
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">On-time returns filing</h5>
+                      <p className="card-text">
                         File your GST returns directly from Zoho Books. Your
                         accounting software will automatically calculate your
                         GST liability and enable you to push transactions to the
@@ -557,11 +568,11 @@ export default function Landingpage() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrow-right"
+              className="bi bi-arrow-right"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
               />
             </svg>
@@ -594,7 +605,7 @@ export default function Landingpage() {
                   width={50}
                   height={50}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
                 <h5>
                   Accounting software for
@@ -619,7 +630,7 @@ export default function Landingpage() {
                   width={50}
                   height={50}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
                 <h5>
                   Accounting software for
@@ -645,9 +656,9 @@ export default function Landingpage() {
         <br />
         <h1>Simple and affordable pricing</h1>
         <br />
-        <div class="row">
+        <div className="row">
           <div
-            class="card"
+            className="card"
             style={{
               width: "16rem",
               justifyItems: "center",
@@ -655,9 +666,9 @@ export default function Landingpage() {
               height: "18rem",
             }}
           >
-            <div class="card-body">
+            <div className="card-body">
               <p
-                class="card-text"
+                className="card-text"
                 style={{ letterSpacing: "4px", marginTop: "25px" }}
               >
                 FREE
@@ -669,7 +680,7 @@ export default function Landingpage() {
           </div>
 
           <div
-            class="card"
+            className="card"
             style={{
               width: "16rem",
               justifyItems: "center",
@@ -677,9 +688,9 @@ export default function Landingpage() {
               height: "18rem",
             }}
           >
-            <div class="card-body">
+            <div className="card-body">
               <p
-                class="card-text"
+                className="card-text"
                 style={{ letterSpacing: "4px", marginTop: "25px" }}
               >
                 STANDARD
@@ -690,7 +701,7 @@ export default function Landingpage() {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-currency-dollar"
+                  className="bi bi-currency-dollar"
                   viewBox="0 0 16 16"
                 >
                   <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
@@ -707,7 +718,7 @@ export default function Landingpage() {
           </div>
 
           <div
-            class="card"
+            className="card"
             style={{
               width: "16rem",
               justifyItems: "center",
@@ -715,9 +726,9 @@ export default function Landingpage() {
               height: "18rem",
             }}
           >
-            <div class="card-body">
+            <div className="card-body">
               <p
-                class="card-text"
+                className="card-text"
                 style={{ letterSpacing: "4px", marginTop: "25px" }}
               >
                 PROFESSIONAL
@@ -728,7 +739,7 @@ export default function Landingpage() {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-currency-dollar"
+                  className="bi bi-currency-dollar"
                   viewBox="0 0 16 16"
                 >
                   <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
@@ -745,7 +756,7 @@ export default function Landingpage() {
           </div>
 
           <div
-            class="card"
+            className="card"
             style={{
               width: "16rem",
               justifyItems: "center",
@@ -753,9 +764,9 @@ export default function Landingpage() {
               height: "18rem",
             }}
           >
-            <div class="card-body">
+            <div className="card-body">
               <p
-                class="card-text"
+                className="card-text"
                 style={{ letterSpacing: "4px", marginTop: "25px" }}
               >
                 PREMIUM
@@ -766,7 +777,7 @@ export default function Landingpage() {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-currency-dollar"
+                  className="bi bi-currency-dollar"
                   viewBox="0 0 16 16"
                 >
                   <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
@@ -782,7 +793,7 @@ export default function Landingpage() {
             </div>
           </div>
           <div
-            class="card"
+            className="card"
             style={{
               width: "16rem",
               justifyItems: "center",
@@ -790,9 +801,9 @@ export default function Landingpage() {
               height: "18rem",
             }}
           >
-            <div class="card-body">
+            <div className="card-body">
               <p
-                class="card-text"
+                className="card-text"
                 style={{ letterSpacing: "4px", marginTop: "25px" }}
               >
                 ELITE
@@ -803,7 +814,7 @@ export default function Landingpage() {
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-currency-dollar"
+                  className="bi bi-currency-dollar"
                   viewBox="0 0 16 16"
                 >
                   <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
@@ -826,11 +837,11 @@ export default function Landingpage() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrow-right"
+              className="bi bi-arrow-right"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
               />
             </svg>
@@ -846,10 +857,10 @@ export default function Landingpage() {
         <h1>Powering thousands of businesses</h1>
         <br />
         <br />
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <Image src="/person.png" width={400} height={400}></Image>
-            <div class="row">
+            <div className="row">
               <h3>HARESH GAUSWAMI</h3>
               <h6>OCTFIS TECHNO LLP, Surat, India</h6>
               <br />
@@ -867,7 +878,7 @@ export default function Landingpage() {
             </div>
           </div>
           <div
-            class="col"
+            className="col"
             style={{ background: "#2babeb", color: "white", maxWidth: "700px" }}
           >
             <h5 style={{ marginTop: "50px", fontFamily: "cursive" }}>
@@ -898,11 +909,11 @@ export default function Landingpage() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrow-right"
+              className="bi bi-arrow-right"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
               />
             </svg>
@@ -913,11 +924,11 @@ export default function Landingpage() {
       {/*  */}
 
       <section className={styles.sectionss}>
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <Image src="/mobile_1x.webp" width={1000} height={1000}></Image>
           </div>
-          <div class="col">
+          <div className="col">
             <h1 style={{ marginTop: "210px" }}>Accounting on the go</h1>
             <br />
             <h5 style={{ marginLeft: "40px" }}>
@@ -938,11 +949,11 @@ export default function Landingpage() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-arrow-right"
+                className="bi bi-arrow-right"
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                 />
               </svg>

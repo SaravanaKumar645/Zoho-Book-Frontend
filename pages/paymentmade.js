@@ -3,11 +3,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 function Paymentmaded() {
   return (
-    <div>
-      <Head>
-        <title>Payment Made </title>
-      </Head>
-     <Header />
+    <div style={{ display: "flex" }}>
+      <Header />
       <PaymentMade />
     </div>
   );

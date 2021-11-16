@@ -25,11 +25,8 @@ import { signin, authenticate, isAutheticated } from "../services/Auth";
 
 export default function Customers() {
   const router = useRouter();
-
   const { setUser } = useContext(User);
-
   const { user } = isAutheticated();
-
   const [datas, setdatas] = useState([]);
   const [ids, setIds] = useState(0);
 
@@ -44,20 +41,8 @@ export default function Customers() {
       .catch(console.log("Get Trpis request failed"));
   }, []);
 
-  // console.log(user.email);
-  // useEffect(() => {
-  //   getExpense(user.email)
-  //     .then((data) => {
-  //       console.log(data);
-  //       setdatas(data);
-  //     })
-
-  //     .catch(console.log("Get Expense request failed"));
-  // }, []);
-
   const Columns = [
     { title: "Item Id", field: "_id" },
-
     { title: "Item NAME", field: "name" },
     { title: "Selling Description", field: "selling_description" },
     { title: "Rate", field: "purchase_price" },
