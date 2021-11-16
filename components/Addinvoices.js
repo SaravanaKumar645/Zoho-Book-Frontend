@@ -12,7 +12,6 @@ import Link from "next/link";
 import ReactPlayer from "react-player";
 
 export default function AddInvoice() {
-
   return (
     <div style={{ float: "right", marginRight: "20px" }}>
       <div className="navba" style={{ marginLeft: "1180px" }}>
@@ -188,7 +187,10 @@ export default function AddInvoice() {
             </div> */}
 
           <div className="row features-section" style={{ paddingTop: "80px" }}>
-            <div className="col-lg-4 text-center" style={{ marginLeft: " 100px" }}>
+            <div
+              className="col-lg-4 text-center"
+              style={{ marginLeft: " 100px" }}
+            >
               <ColorLensOutlinedIcon color="success" />
               <h4 className="font-large" style={{ paddingTop: "10px" }}>
                 Brand Your Invoice
@@ -209,7 +211,10 @@ export default function AddInvoice() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-4 text-center" style={{ marginLeft: " -100px" }}>
+            <div
+              className="col-lg-4 text-center"
+              style={{ marginLeft: " -100px" }}
+            >
               <PaymentOutlinedIcon sx={{ color: orange[300] }} />
               <h4 className="font-large" style={{ paddingTop: "10px" }}>
                 Collect Online Payments
@@ -229,7 +234,10 @@ export default function AddInvoice() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-4 text-center" style={{ marginLeft: " -100px" }}>
+            <div
+              className="col-lg-4 text-center"
+              style={{ marginLeft: " -100px" }}
+            >
               <FolderSharedOutlinedIcon sx={{ color: blue[900] }} />
               <h4 className="font-large" style={{ paddingTop: "10px" }}>
                 Client Portal

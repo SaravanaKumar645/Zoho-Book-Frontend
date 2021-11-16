@@ -6,7 +6,7 @@ import {
   TableHead,
   TableRow,
   Toolbar,
-   Button,
+  Button,
   Link,
 } from "@mui/material";
 import { Box } from "@mui/system";
@@ -15,22 +15,19 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 import EmojiObjectsTwoToneIcon from "@mui/icons-material/EmojiObjectsTwoTone";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
-import React, {useContext,useState,useEffect} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-
-import User from "./context"
+import User from "./context";
 const drawerWidth = 240;
 
 export default function Invoice({ invoices }) {
   const router = useRouter();
-  const { setUser } = useContext(User)
+  const { setUser } = useContext(User);
 
   function clicked() {
-   
-    router.push('/invoiceview');
-
-   }
+    router.push("/invoiceview");
+  }
   return (
     <div>
       <div className="navba">
@@ -47,13 +44,13 @@ export default function Invoice({ invoices }) {
           </Link>{" "}
         </button> */}
         <Button
-        variant="contained"
-        color="success"
-        component={Link}
-        href="/addinvoice"
-      >
-        &#xFF0B;&nbsp;New
-      </Button>
+          variant="contained"
+          color="success"
+          component={Link}
+          href="/addinvoice"
+        >
+          &#xFF0B;&nbsp;New
+        </Button>
         {/* <SettingsOutlinedIcon style={{ marginLeft: "28px" }} />
         <DehazeIcon
           sx={{
@@ -96,7 +93,6 @@ export default function Invoice({ invoices }) {
                 <TableCell>Customer Name</TableCell>
                 <TableCell>Total</TableCell>
                 <TableCell>View</TableCell>
-
               </TableRow>
             </TableHead>
             <TableBody>
@@ -108,7 +104,6 @@ export default function Invoice({ invoices }) {
                     <TableCell>{invoice.customer_name}</TableCell>
                     <TableCell>{invoice.total}</TableCell>
                     <TableCell>
-                   
                       <Button
                         style={{
                           fontSize: 9,
@@ -116,25 +111,22 @@ export default function Invoice({ invoices }) {
                           width: 60,
                           borderRadius: 20,
                           padding: 3,
-                          color:'#000000',
-                          backgroundColor:'#c2c2a3'
+                          color: "#000000",
+                          backgroundColor: "#c2c2a3",
                         }}
                         onClick={
                           // setUser(invoice._id),
                           // console.log(invoice._id),clicked
                           //   router.push('/estiview')
-    
-                          ()=>{
-                            router.push(`/invoice/${invoice._id}`)
-    
+
+                          () => {
+                            router.push(`/invoice/${invoice._id}`);
                           }
-                              }
+                        }
                       >
                         view
-                    </Button>
-
+                      </Button>
                     </TableCell>
-
                   </TableRow>
                 ))}
             </TableBody>

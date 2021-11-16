@@ -4,7 +4,6 @@ export default function Homeestimate() {
   return (
     <div>
       <Header />
-
       <EstimateHome />
     </div>
   );

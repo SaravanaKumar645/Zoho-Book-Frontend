@@ -51,7 +51,6 @@ class ColumnChartTimeAxis extends Component {
         dataSource: {
           chart: {
             numberSuffix: "K",
-
             showLegend: 0,
           },
           caption: {

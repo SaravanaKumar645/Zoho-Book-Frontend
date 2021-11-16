@@ -6,7 +6,7 @@ import {
   TableHead,
   TableRow,
   Toolbar,
-   Button,
+  Button,
   Link,
 } from "@mui/material";
 import { Box } from "@mui/system";
@@ -14,31 +14,24 @@ import AddIcon from "@mui/icons-material/Add";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import EmojiObjectsTwoToneIcon from "@mui/icons-material/EmojiObjectsTwoTone";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import React, {useContext,useState,useEffect} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-
-import User from "./context"
-
+import User from "./context";
 
 const drawerWidth = 240;
 
 export default function Salesitems({ salesitems }) {
-
   const router = useRouter();
-    const { setUser } = useContext(User);
+  const { setUser } = useContext(User);
 
-    // const { user } = isAutheticated();
- 
+  // const { user } = isAutheticated();
+
   //  const [datas, setdatas] = useState([]);
 
-   function clicked() {
-   
-    router.push('/salesview');
-
-   }
-
-
+  function clicked() {
+    router.push("/salesview");
+  }
 
   return (
     <div>
@@ -57,13 +50,13 @@ export default function Salesitems({ salesitems }) {
           </Link>{" "}
         </button> */}
         <Button
-        variant="contained"
-        color="success"
-        component={Link}
-        href="/addsale"
-      >
-        &#xFF0B;&nbsp;New
-      </Button>
+          variant="contained"
+          color="success"
+          component={Link}
+          href="/addsale"
+        >
+          &#xFF0B;&nbsp;New
+        </Button>
         {/* <SettingsOutlinedIcon style={{ marginLeft: "28px" }} />
         <DehazeIcon
           sx={{
@@ -86,10 +79,9 @@ export default function Salesitems({ salesitems }) {
           />{" "}
           {" "}
         </a> */}
-       
       </div>
-      
-      <hr/>
+
+      <hr />
       <Box
         component="main"
         lg={{
@@ -108,7 +100,7 @@ export default function Salesitems({ salesitems }) {
                 <TableCell>REFERENCE#</TableCell>
                 <TableCell>CUSTOMER NAME</TableCell>
                 <TableCell>Customer Id</TableCell>
-               
+
                 <TableCell>AMOUNT</TableCell>
                 <TableCell>EXPECTED SHIPMENT DATE</TableCell>
                 <TableCell>ORDER STATUS</TableCell>
@@ -116,46 +108,47 @@ export default function Salesitems({ salesitems }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {salesitems && salesitems.map((salesitem) => (
-                <TableRow key={salesitem._id}>
-                  <TableCell>{salesitem.estimate_date}</TableCell>
-                  <TableCell>{salesitem._id}</TableCell>
-                  <TableCell>{salesitem.reference}</TableCell>
-                  <TableCell>{salesitem.customer_name}</TableCell>
-                  <TableCell>{salesitem.c}</TableCell>
-                 
-                  <TableCell>{salesitem.total}</TableCell>
-                  <TableCell>{salesitem.expiry_date}</TableCell>
-                  <TableCell>Good</TableCell>
-                  <TableCell>
-                  
-                  <Button
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 600,
-                    width: 60,
-                    borderRadius: 20,
-                    padding: 3,
-                    color:'#000000',
-                    backgroundColor:'#c2c2a3'
-                  }}
-                  onClick={ ()=>{
-                    // clicked(estimatesitem._id)
-                    // ()=>console.log(estimatesitem._id),
-                    // setUser(salesitem._id),
-                    // console.log(salesitem._id),clicked
+              {salesitems &&
+                salesitems.map((salesitem) => (
+                  <TableRow key={salesitem._id}>
+                    <TableCell>{salesitem.estimate_date}</TableCell>
+                    <TableCell>{salesitem._id}</TableCell>
+                    <TableCell>{salesitem.reference}</TableCell>
+                    <TableCell>{salesitem.customer_name}</TableCell>
+                    <TableCell>{salesitem.c}</TableCell>
 
-                    router.push(`/salesview/${salesitem._id}`)}
+                    <TableCell>{salesitem.total}</TableCell>
+                    <TableCell>{salesitem.expiry_date}</TableCell>
+                    <TableCell>Good</TableCell>
+                    <TableCell>
+                      <Button
+                        style={{
+                          fontSize: 9,
+                          fontWeight: 600,
+                          width: 60,
+                          borderRadius: 20,
+                          padding: 3,
+                          color: "#000000",
+                          backgroundColor: "#c2c2a3",
+                        }}
+                        onClick={
+                          () => {
+                            // clicked(estimatesitem._id)
+                            // ()=>console.log(estimatesitem._id),
+                            // setUser(salesitem._id),
+                            // console.log(salesitem._id),clicked
 
-                    //   router.push('/estiview')
+                            router.push(`/salesview/${salesitem._id}`);
+                          }
+
+                          //   router.push('/estiview')
                         }
-                  >
-                    view
-                  </Button>
-                  </TableCell>
-
-                </TableRow>
-              ))}
+                      >
+                        view
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>

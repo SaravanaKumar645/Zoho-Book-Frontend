@@ -59,8 +59,7 @@ export default function Graph() {
                 fill: theme.palette.text.primary,
                 ...theme.typography.body1,
               }}
-            >
-            </Label>
+            ></Label>
           </YAxis>
           <Line
             isAnimationActive={false}

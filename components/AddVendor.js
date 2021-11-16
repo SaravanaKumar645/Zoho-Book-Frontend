@@ -12,94 +12,91 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 // import Items from "../services/Customers"
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
 import ReactPlayer from "react-player";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext, { useTabContext } from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext, { useTabContext } from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 import TextField from "@mui/material/TextField";
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import {isAutheticated} from "../services/Auth"
-import { addVendor } from "../services/Customers"
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import { isAutheticated } from "../services/Auth";
+import { addVendor } from "../services/Customers";
 
 export default function AddVendor() {
- 
-  const {user} = isAutheticated();
- 
-  const [value, setValue] = useState('1');
+  const { user } = isAutheticated();
+
+  const [value, setValue] = useState("1");
 
   const router = useRouter();
-const [values, setValues] = useState({
-  customer_type:"",
-  first_name:"",
-  last_name:"",
-  company_name:"",
-  vendor_email:"",
-  work_phone:"",
-  mobile:"",
-  website:""
+  const [values, setValues] = useState({
+    customer_type: "",
+    first_name: "",
+    last_name: "",
+    company_name: "",
+    vendor_email: "",
+    work_phone: "",
+    mobile: "",
+    website: "",
+  });
 
+  const {
+    customer_type,
+    first_name,
+    last_name,
+    company_name,
+    vendor_email,
+    work_phone,
+    mobile,
+    website,
+  } = values;
+  console.log(values);
 
-});
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
+  const handleChanges = (event, newValue) => {
+    setValue(newValue);
+  };
 
-const {customer_type,first_name,last_name,company_name,vendor_email,work_phone,mobile,website}=values
-console.log(values)
-
-const handleChange = name => event => {
-  setValues({ ...values,[name]:event.target.value});
-};
-const handleChanges = (event, newValue) => {
-  setValue(newValue);
-};
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // setValues({...values,isclick:true})
-    const ventor={
+    const ventor = {
       user_id: user._id,
-      first_name:first_name,
-      last_name:last_name,
-      company_name:company_name,
-      vendor_email:vendor_email,
-      vendor_phone:work_phone,
-      mobile_phone:mobile,
-      website:website,
+      first_name: first_name,
+      last_name: last_name,
+      company_name: company_name,
+      vendor_email: vendor_email,
+      vendor_phone: work_phone,
+      mobile_phone: mobile,
+      website: website,
+    };
+    addVendor(ventor).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          customer_type: "",
+          first_name: "",
+          last_name: "",
+          company_name: "",
+          vendor_email: "",
+          work_phone: "",
+          mobile: "",
+          website: "",
+        });
+        console.log("error");
+        router.push("/vendor");
+      }
+      console.log(values);
+    });
 
-    
-        }
-        addVendor(ventor).then(data=>{
-          if(data.error){
-            setValues({...values,error:data.error})
-            
-       
-  
-          }
-          else{
-            setValues({...values,
-                customer_type:"",
-                first_name:"",
-                last_name:"",
-                company_name:"",
-                vendor_email:"",
-                work_phone:"",
-                mobile:"",
-                website:"",
-                
-  
-              })
-             console.log("error")
-             router.push('/vendor')
-          }
-          console.log(values)
-      })
-
-        // console.log(customer)
-
-       }
-
+    // console.log(customer)
+  };
 
   // const handleChanges = (e) => {
   //   setName(e.target.value);
@@ -128,7 +125,7 @@ const handleSubmit = (e) => {
 
         <div className="row zb-txn-form">
           <div className="col-lg-8">
-            <form onSubmit={handleSubmit} style={{width:"119%"}}>
+            <form onSubmit={handleSubmit} style={{ width: "119%" }}>
               <fieldset className="form-group">
                 <div className="row">
                   <legend className="col-form-label col-lg-3 pt-0">
@@ -145,8 +142,10 @@ const handleSubmit = (e) => {
                       <input
                         id="a1e525b29"
                         className="ember-view form-check-input"
-                        onChange={handleChange("vendor_type")} value="business" type="radio"  name="vendor_type"  
-                        
+                        onChange={handleChange("vendor_type")}
+                        value="business"
+                        type="radio"
+                        name="vendor_type"
                       />
                       <label className="form-check-label" htmlFor="a1e525b29">
                         Business
@@ -154,11 +153,13 @@ const handleSubmit = (e) => {
                     </div>
                     <div className="form-check form-check-inline">
                       <input
-                        
                         id="a0ee5a8ca"
                         className="ember-view form-check-input"
-                        onChange={handleChange("vendor_type")} value="inidividual" type="radio"  name="vendor_type" 
-                       />
+                        onChange={handleChange("vendor_type")}
+                        value="inidividual"
+                        type="radio"
+                        name="vendor_type"
+                      />
                       <label className="form-check-label" htmlFor="a0ee5a8ca">
                         Individual
                       </label>
@@ -226,12 +227,10 @@ const handleSubmit = (e) => {
                     <div className="col-lg-4">
                       <input
                         placeholder="First Name"
-                   
                         autoFocus=""
-
                         onChange={handleChange("first_name")}
-                        value={values.first_name} required
-
+                        value={values.first_name}
+                        required
                         id="ember555"
                         className="ember-text-field ember-view form-control"
                         type="text"
@@ -241,10 +240,9 @@ const handleSubmit = (e) => {
                       <input
                         placeholder="Last Name"
                         id="ember556"
-
                         onChange={handleChange("last_name")}
-                        value={values.last_name} required
-
+                        value={values.last_name}
+                        required
                         className="ember-text-field ember-view form-control"
                         type="text"
                       />
@@ -255,14 +253,14 @@ const handleSubmit = (e) => {
               <div className="row form-group">
                 <label className="col-form-label col-lg-3">
                   {" "}
-                  Company Name{" "} 
-                  {/* company_name */}
+                  Company Name {/* company_name */}
                 </label>
                 <div className="col-lg-6">
                   <input
                     id="ember557"
                     onChange={handleChange("company_name")}
-                    value={values.company_name} required
+                    value={values.company_name}
+                    required
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
@@ -282,15 +280,14 @@ const handleSubmit = (e) => {
                     >
                       <div className="auto-select ac-selected" tabIndex="-1">
                         <input
-                    id="ember557"
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                          <HelpOutlineOutlinedIcon
-                            color="disabled"
-                            style={{ marginLeft: "20px" }}
-                          />
-                        
+                          id="ember557"
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                        <HelpOutlineOutlinedIcon
+                          color="disabled"
+                          style={{ marginLeft: "20px" }}
+                        />
 
                         {/* <input autocomplete="off" spellcheck="false" placeholder="" autocorrect="off" autocapitalize="off" id="ember560" className="ember-text-field form-control ac-search-txt ember-view" type="text"
      />  */}
@@ -306,19 +303,16 @@ const handleSubmit = (e) => {
                 </span>
               </div>
               <div className="row form-group">
-                <label className="col-form-label col-lg-3 ">
-                  Vendor Email
-                </label>
+                <label className="col-form-label col-lg-3 ">Vendor Email</label>
                 <div
                   className="col-lg-6"
                   style={{ display: "flex", width: "55%" }}
                 >
                   <input
                     id="ember564"
-
                     onChange={handleChange("vendor_email")}
-                    value={values.vendor_email} required
-
+                    value={values.vendor_email}
+                    required
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
@@ -335,16 +329,13 @@ const handleSubmit = (e) => {
                 </span>
               </div>
               <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  Vendor Phone
-                </label>
+                <label className="col-form-label col-lg-3">Vendor Phone</label>
                 <div className="col-lg-3" style={{ paddingRight: "8px" }}>
                   <input
                     placeholder="Work Phone"
-
                     onChange={handleChange("work_phone")}
-                    value={values.work_phone} required
-
+                    value={values.work_phone}
+                    required
                     id="ember568"
                     className="ember-text-field ember-view form-control"
                     type="text"
@@ -356,12 +347,9 @@ const handleSubmit = (e) => {
                 >
                   <input
                     placeholder="Mobile"
-
-
-
                     onChange={handleChange("mobile")}
-                    value={values.mobile} required         
-                    
+                    value={values.mobile}
+                    required
                     id="ember569"
                     className="ember-text-field ember-view form-control"
                     type="text"
@@ -393,17 +381,14 @@ const handleSubmit = (e) => {
                 <div className="col-lg-6">
                   <input
                     id="ember574"
-
                     onChange={handleChange("website")}
-                    value={values.website} 
-
+                    value={values.website}
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
                 </div>
               </div>
-             
-              
+
               <button
                 id="ember1447"
                 className="btn btn-primary ember-view"
@@ -419,21 +404,16 @@ const handleSubmit = (e) => {
                 <button
                   id="ember1447"
                   className="btn btn-primary ember-view"
-                  type="submit" style={{marginLeft:"10px"}}
+                  type="submit"
+                  style={{ marginLeft: "10px" }}
                 >
-               
-                    <a >Go back </a>
-                  
-                  
+                  <a>Go back </a>
                 </button>
-                </Link>
-                
+              </Link>
             </form>
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }

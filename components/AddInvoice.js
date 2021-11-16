@@ -5,23 +5,17 @@ import Box from "@mui/material/Box";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
-
 import { useState } from "react";
-
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-
 import Stack from "@mui/material/Stack";
 import { InputLabel, Select } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-
 import SearchIcon from "@mui/icons-material/Search";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
-
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
-
 import FormControl from "@mui/material/FormControl";
 import * as React from "react";
 import MenuItem from "@mui/material/MenuItem";
@@ -737,17 +731,14 @@ export default function AddInvoice(props) {
               Cancel
             </button>
             <Link href="/invoices">
-                <button
-                  id="ember1447"
-                  className="btn btn-primary ember-view"
-                  type="submit"
-                >
-               
-                    <a >Go back </a>
-                  
-                  
-                </button>
-                </Link>
+              <button
+                id="ember1447"
+                className="btn btn-primary ember-view"
+                type="submit"
+              >
+                <a>Go back </a>
+              </button>
+            </Link>
           </div>
         </div>
         {/* </form> */}

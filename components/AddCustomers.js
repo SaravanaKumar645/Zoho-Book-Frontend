@@ -4,138 +4,151 @@ import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.css";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 // import Items from "../services/Customers"
-import React,{useState} from "react";
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext, { useTabContext } from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import { addCustomer } from "../services/Customers"
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext, { useTabContext } from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import { addCustomer } from "../services/Customers";
 import { useRouter } from "next/router";
-import {isAutheticated} from '../services/Auth'
+import { isAutheticated } from "../services/Auth";
 
 export default function Estimates() {
+  const { user } = isAutheticated();
 
-  const {user} = isAutheticated();
- 
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState("1");
 
   const router = useRouter();
-const [values, setValues] = useState({
-  customer_type:"",
-  first_name:"",
-  last_name:"",
-  company_name:"",
-  customer_email:"",
-  work_phone:"",
-  mobile:"",
-  website:"",
-  pan:"",
-  curbalance:"",
-  paymentT:"",
-  language:"",
-  facebook:"",
-  twitter:"",
-  attention:"",
-  country:"",
-  addre:"",
-  city:"",
-  state:"",
-  code:"",
-  phone:"",
-  fax:"",
-  textarea:""
+  const [values, setValues] = useState({
+    customer_type: "",
+    first_name: "",
+    last_name: "",
+    company_name: "",
+    customer_email: "",
+    work_phone: "",
+    mobile: "",
+    website: "",
+    pan: "",
+    curbalance: "",
+    paymentT: "",
+    language: "",
+    facebook: "",
+    twitter: "",
+    attention: "",
+    country: "",
+    addre: "",
+    city: "",
+    state: "",
+    code: "",
+    phone: "",
+    fax: "",
+    textarea: "",
+  });
 
+  const {
+    customer_type,
+    first_name,
+    last_name,
+    company_name,
+    customer_email,
+    work_phone,
+    mobile,
+    website,
+    pan,
+    curbalance,
+    paymentT,
+    language,
+    facebook,
+    twitter,
+    attention,
+    country,
+    addre,
+    city,
+    state,
+    code,
+    phone,
+    fax,
+    textarea,
+  } = values;
+  console.log(values);
 
-});
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
+  const handleChanges = (event, newValue) => {
+    setValue(newValue);
+  };
 
-const {customer_type,first_name,last_name,company_name,customer_email,work_phone,mobile,website,pan,curbalance,paymentT,language,facebook,twitter,attention,country,addre,city,state,code,phone,fax,textarea}=values
-console.log(values)
-
-const handleChange = name => event => {
-  setValues({ ...values,[name]:event.target.value});
-};
-const handleChanges = (event, newValue) => {
-  setValue(newValue);
-};
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // setValues({...values,isclick:true})
-    const customer={
+    const customer = {
       user_id: user._id,
-      customer_type:customer_type,
-      first_name:first_name,
-      last_name:last_name,
-      company_name:company_name,
-      customer_email:customer_email,
-      work_phone:work_phone,
-      mobile:mobile,
-      website:website,
-      pan:pan,
-      curbalance:curbalance,
-      paymentT:paymentT,
-      language:language,
-      facebook:facebook,
-      twitter:twitter,
-      attention:attention,
-      country:country,
-      addre:addre,
-      city:city,
-      state:state,
-      code:code,
-      phone:phone,
-      fax:fax,
-      textarea:textarea
-    
-        }
-        addCustomer(customer).then(data=>{
-          if(data.error){
-            setValues({...values,error:data.error})
-            
-       
-  
-          }
-          else{
-            setValues({...values,
-                customer_type:"",
-                first_name:"",
-                last_name:"",
-                company_name:"",
-                customer_email:"",
-                work_phone:"",
-                mobile:"",
-                website:"",
-                pan:"",
-                curbalance:"",
-                paymentT:"",
-                language:"",
-                facebook:"",
-                twitter:"",
-                attention:"",
-                country:"",
-                addre:"",
-                city:"",
-                state:"",
-                code:"",
-                phone:"",
-                fax:"",
-                textarea:""
-  
-              })
-             console.log("error")
-             router.push('/customer')
-          }
-          console.log(values)
-      })
+      customer_type: customer_type,
+      first_name: first_name,
+      last_name: last_name,
+      company_name: company_name,
+      customer_email: customer_email,
+      work_phone: work_phone,
+      mobile: mobile,
+      website: website,
+      pan: pan,
+      curbalance: curbalance,
+      paymentT: paymentT,
+      language: language,
+      facebook: facebook,
+      twitter: twitter,
+      attention: attention,
+      country: country,
+      addre: addre,
+      city: city,
+      state: state,
+      code: code,
+      phone: phone,
+      fax: fax,
+      textarea: textarea,
+    };
+    addCustomer(customer).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          customer_type: "",
+          first_name: "",
+          last_name: "",
+          company_name: "",
+          customer_email: "",
+          work_phone: "",
+          mobile: "",
+          website: "",
+          pan: "",
+          curbalance: "",
+          paymentT: "",
+          language: "",
+          facebook: "",
+          twitter: "",
+          attention: "",
+          country: "",
+          addre: "",
+          city: "",
+          state: "",
+          code: "",
+          phone: "",
+          fax: "",
+          textarea: "",
+        });
+        console.log("error");
+        router.push("/customer");
+      }
+      console.log(values);
+    });
 
-        // console.log(customer)
+    // console.log(customer)
+  };
 
-       }
-
-
- 
   // const customHandleClick = async (e) => {
   //   e.preventDefault();
   //   // const data = new FormData(event.currentTarget);
@@ -154,34 +167,28 @@ const handleSubmit = (e) => {
   //   // console.log(res);
   // };
 
+  //reference from zoho expense
 
+  // const [values, setValues] = useState({
+  //   email:"",
+  //   org_name:"",
+  //   travel_type:"",
+  //   trip_name:"",
+  //   business_purpose:"",
+  //   f_Departure_From:"",
+  //   f_Arrive_At:"",
+  //   f_Departure_date:"",
+  //   f_Description:"",
+  //   h_location:"",
+  //   h_check_in:"",
+  //   h_check_out:"",
+  //   h_description:"",
+  //   error:false,
+  //   sucess:"",
+  //   didRedirect:false,
+  //   isclick:""
 
-//reference from zoho expense 
-
-
-// const [values, setValues] = useState({
-//   email:"",
-//   org_name:"",
-//   travel_type:"",
-//   trip_name:"",
-//   business_purpose:"",
-//   f_Departure_From:"",
-//   f_Arrive_At:"",
-//   f_Departure_date:"",
-//   f_Description:"",
-//   h_location:"",
-//   h_check_in:"",
-//   h_check_out:"",
-//   h_description:"",
-//   error:false,
-//   sucess:"",
-//   didRedirect:false,
-//   isclick:""
-  
-// });
-
-
-
+  // });
 
   // const handleChanges = (e) => {
   //   setName(e.target.value);
@@ -210,7 +217,7 @@ const handleSubmit = (e) => {
 
         <div className="row zb-txn-form">
           <div className="col-lg-8">
-            <form onSubmit={handleSubmit} style={{width:"119%"}}>
+            <form onSubmit={handleSubmit} style={{ width: "119%" }}>
               <fieldset className="form-group">
                 <div className="row">
                   <legend className="col-form-label col-lg-3 pt-0">
@@ -227,8 +234,10 @@ const handleSubmit = (e) => {
                       <input
                         id="a1e525b29"
                         className="ember-view form-check-input"
-                        onChange={handleChange("customer_type")} value="business" type="radio"  name="customer_type"  
-                        
+                        onChange={handleChange("customer_type")}
+                        value="business"
+                        type="radio"
+                        name="customer_type"
                       />
                       <label className="form-check-label" htmlFor="a1e525b29">
                         Business
@@ -236,11 +245,13 @@ const handleSubmit = (e) => {
                     </div>
                     <div className="form-check form-check-inline">
                       <input
-                        
                         id="a0ee5a8ca"
                         className="ember-view form-check-input"
-                        onChange={handleChange("customer_type")} value="inidividual" type="radio"  name="customer_type" 
-                       />
+                        onChange={handleChange("customer_type")}
+                        value="inidividual"
+                        type="radio"
+                        name="customer_type"
+                      />
                       <label className="form-check-label" htmlFor="a0ee5a8ca">
                         Individual
                       </label>
@@ -308,12 +319,10 @@ const handleSubmit = (e) => {
                     <div className="col-lg-4">
                       <input
                         placeholder="First Name"
-                   
                         autoFocus=""
-
                         onChange={handleChange("first_name")}
-                        value={values.first_name} required
-
+                        value={values.first_name}
+                        required
                         id="ember555"
                         className="ember-text-field ember-view form-control"
                         type="text"
@@ -323,10 +332,9 @@ const handleSubmit = (e) => {
                       <input
                         placeholder="Last Name"
                         id="ember556"
-
                         onChange={handleChange("last_name")}
-                        value={values.last_name} required
-
+                        value={values.last_name}
+                        required
                         className="ember-text-field ember-view form-control"
                         type="text"
                       />
@@ -337,14 +345,14 @@ const handleSubmit = (e) => {
               <div className="row form-group">
                 <label className="col-form-label col-lg-3">
                   {" "}
-                  Company Name{" "} 
-                  {/* company_name */}
+                  Company Name {/* company_name */}
                 </label>
                 <div className="col-lg-6">
                   <input
                     id="ember557"
                     onChange={handleChange("company_name")}
-                    value={values.company_name} required
+                    value={values.company_name}
+                    required
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
@@ -364,15 +372,14 @@ const handleSubmit = (e) => {
                     >
                       <div className="auto-select ac-selected" tabIndex="-1">
                         <input
-                    id="ember557"
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                          <HelpOutlineOutlinedIcon
-                            color="disabled"
-                            style={{ marginLeft: "20px" }}
-                          />
-                        
+                          id="ember557"
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                        <HelpOutlineOutlinedIcon
+                          color="disabled"
+                          style={{ marginLeft: "20px" }}
+                        />
 
                         {/* <input autocomplete="off" spellcheck="false" placeholder="" autocorrect="off" autocapitalize="off" id="ember560" className="ember-text-field form-control ac-search-txt ember-view" type="text"
      />  */}
@@ -397,10 +404,9 @@ const handleSubmit = (e) => {
                 >
                   <input
                     id="ember564"
-
                     onChange={handleChange("customer_email")}
-                    value={values.customer_email} required
-
+                    value={values.customer_email}
+                    required
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
@@ -423,10 +429,9 @@ const handleSubmit = (e) => {
                 <div className="col-lg-3" style={{ paddingRight: "8px" }}>
                   <input
                     placeholder="Work Phone"
-
                     onChange={handleChange("work_phone")}
-                    value={values.work_phone} required
-
+                    value={values.work_phone}
+                    required
                     id="ember568"
                     className="ember-text-field ember-view form-control"
                     type="text"
@@ -438,12 +443,9 @@ const handleSubmit = (e) => {
                 >
                   <input
                     placeholder="Mobile"
-
-
-
                     onChange={handleChange("mobile")}
-                    value={values.mobile} required         
-                    
+                    value={values.mobile}
+                    required
                     id="ember569"
                     className="ember-text-field ember-view form-control"
                     type="text"
@@ -475,82 +477,89 @@ const handleSubmit = (e) => {
                 <div className="col-lg-6">
                   <input
                     id="ember574"
-
                     onChange={handleChange("website")}
-                    value={values.website} 
-
+                    value={values.website}
                     className="ember-text-field ember-view form-control"
                     type="text"
                   />
                 </div>
               </div>
-              <Box sx={{ width: '100%', typography: 'body1' }}>
-     
-      <TabContext value={value} sx={{ width: '100%', typography: 'body1' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '100%' }}>
-          <TabList onChange={handleChanges} aria-label="lab API tabs example">
-            <Tab label="Other Details" value="1" />
-            <Tab label="Address" value="2" />
-            <Tab label="Contact Persons" value="3" />
-            <Tab label="Custom Fields" value="4" />
-            <Tab label="Reporting" setValues="5" />
-            <Tab label="Remarks" value="6" />
-          </TabList>
-        </Box>
-        <TabPanel value="1">
-       
-        <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  PAN{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" onChange={handleChange("pan")}
-                    value={values.pan}
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
+              <Box sx={{ width: "100%", typography: "body1" }}>
+                <TabContext
+                  value={value}
+                  sx={{ width: "100%", typography: "body1" }}
+                >
+                  <Box
+                    sx={{
+                      borderBottom: 1,
+                      borderColor: "divider",
+                      width: "100%",
+                    }}
+                  >
+                    <TabList
+                      onChange={handleChanges}
+                      aria-label="lab API tabs example"
+                    >
+                      <Tab label="Other Details" value="1" />
+                      <Tab label="Address" value="2" />
+                      <Tab label="Contact Persons" value="3" />
+                      <Tab label="Custom Fields" value="4" />
+                      <Tab label="Reporting" setValues="5" />
+                      <Tab label="Remarks" value="6" />
+                    </TabList>
+                  </Box>
+                  <TabPanel value="1">
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3"> PAN </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("pan")}
+                          value={values.pan}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Corrency*{" "}
-                </label>
-       <div className="col-lg-4">
-                      <div id="ember552" className="type-ahead ember-view">
-                        <div
-                          id="ember553"
-                          className="dropdown show ac-dropdown ember-view"
-                        >
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Corrency*{" "}
+                      </label>
+                      <div className="col-lg-4">
+                        <div id="ember552" className="type-ahead ember-view">
                           <div
-                            className="auto-select ac-selected"
-                            tabIndex="-1"
+                            id="ember553"
+                            className="dropdown show ac-dropdown ember-view"
                           >
-                            <div>
-                              {/* <select className="value" name="unit"  > */}
-                              {/* <select className="value" name="unit" >  */}
-                              {/* <input autocomplete="off" spellcheck="false" placeholder="Salutation" autocorrect="off" autocapitalize="off" id="ember554" className="ember-text-field form-control ac-search-txt ember-view" type="text">  */}
-                              <select
-                                className="box"
-                                name="primary"
-                                required
-                                style={{
-                                  padding: "5px 49px 0px 20px",
-                                  marginLeft: "-12px",
-                                  marginTop: "-20px",
-                                }}
-                              >
-                                {/* <input placeholder="Salutation" type="text" /> */}
-                                <option value="indian">Indian Rupies</option>
-                                <option value="american.">American Coin</option>
-                               
-                              </select>
-                            </div>
-                            {/* </select>   */}
-                            {/* <div
+                            <div
+                              className="auto-select ac-selected"
+                              tabIndex="-1"
+                            >
+                              <div>
+                                {/* <select className="value" name="unit"  > */}
+                                {/* <select className="value" name="unit" >  */}
+                                {/* <input autocomplete="off" spellcheck="false" placeholder="Salutation" autocorrect="off" autocapitalize="off" id="ember554" className="ember-text-field form-control ac-search-txt ember-view" type="text">  */}
+                                <select
+                                  className="box"
+                                  name="primary"
+                                  required
+                                  style={{
+                                    padding: "5px 49px 0px 20px",
+                                    marginLeft: "-12px",
+                                    marginTop: "-20px",
+                                  }}
+                                >
+                                  {/* <input placeholder="Salutation" type="text" /> */}
+                                  <option value="indian">Indian Rupies</option>
+                                  <option value="american.">
+                                    American Coin
+                                  </option>
+                                </select>
+                              </div>
+                              {/* </select>   */}
+                              {/* <div
                                 className="ember-text-field form-control ac-search-txt ember-view"
                                 
                               > 
@@ -558,98 +567,100 @@ const handleSubmit = (e) => {
                                  
                                 </select> 
                               </div>  */}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Opening Balance{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("curbalance")}
+                          value={values.curbalance}
+                          required
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
                     </div>
 
-
-        <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Opening Balance{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557"  onChange={handleChange("curbalance")}
-                    value={values.curbalance} required
-
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-
-        <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Payment Terms{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" onChange={handleChange("paymentT")}
-                    value={values.paymentT} 
-                    required
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Portal Language{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" 
-                    onChange={handleChange("language")}
-                    value={values.language}
-
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Payment Terms{" "}
-                </label>
-       <div className="col-lg-4">
-                      <div id="ember552" className="type-ahead ember-view">
-                        <div
-                          id="ember553"
-                          className="dropdown show ac-dropdown ember-view"
-                        >
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Payment Terms{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("paymentT")}
+                          value={values.paymentT}
+                          required
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Portal Language{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("language")}
+                          value={values.language}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Payment Terms{" "}
+                      </label>
+                      <div className="col-lg-4">
+                        <div id="ember552" className="type-ahead ember-view">
                           <div
-                            className="auto-select ac-selected"
-                            tabIndex="-1"
+                            id="ember553"
+                            className="dropdown show ac-dropdown ember-view"
                           >
-                            <div>
-                              {/* <select className="value" name="unit"  > */}
-                              {/* <select className="value" name="unit" >  */}
-                              {/* <input autocomplete="off" spellcheck="false" placeholder="Salutation" autocorrect="off" autocapitalize="off" id="ember554" className="ember-text-field form-control ac-search-txt ember-view" type="text">  */}
-                              <select
-                                className="box"
-                                name="primary"
-                                required
-                                style={{
-                                  padding: "5px 49px 0px 20px",
-                                  marginLeft: "-12px",
-                                  marginTop: "-20px",
-                                }}
-                              >
-                                {/* <input placeholder="Salutation" type="text" /> */}
-                                <option value="indian">Due end of the Month</option>
-                                <option value="american.">Due end of the Year</option>
-                               
-                              </select>
-                            </div>
-                            {/* </select>   */}
-                            {/* <div
+                            <div
+                              className="auto-select ac-selected"
+                              tabIndex="-1"
+                            >
+                              <div>
+                                {/* <select className="value" name="unit"  > */}
+                                {/* <select className="value" name="unit" >  */}
+                                {/* <input autocomplete="off" spellcheck="false" placeholder="Salutation" autocorrect="off" autocapitalize="off" id="ember554" className="ember-text-field form-control ac-search-txt ember-view" type="text">  */}
+                                <select
+                                  className="box"
+                                  name="primary"
+                                  required
+                                  style={{
+                                    padding: "5px 49px 0px 20px",
+                                    marginLeft: "-12px",
+                                    marginTop: "-20px",
+                                  }}
+                                >
+                                  {/* <input placeholder="Salutation" type="text" /> */}
+                                  <option value="indian">
+                                    Due end of the Month
+                                  </option>
+                                  <option value="american.">
+                                    Due end of the Year
+                                  </option>
+                                </select>
+                              </div>
+                              {/* </select>   */}
+                              {/* <div
                                 className="ember-text-field form-control ac-search-txt ember-view"
                                 
                               > 
@@ -657,47 +668,42 @@ const handleSubmit = (e) => {
                                  
                                 </select> 
                               </div>  */}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Facebook{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("facebook")}
+                          val={values.facebook}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
                     </div>
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Facebook{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557"
-
-                    onChange={handleChange("facebook")}
-                    val={values.facebook}
-
-
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {" "}
-                  Twitter{" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557"
-
-                    onChange={handleChange("twitter")}
-                    value={values.twitter}
-
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-{/* 
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Twitter{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("twitter")}
+                          value={values.twitter}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    {/* 
               <div className="row form-group">
                 <label className="col-form-label col-lg-3">
                   {""}
@@ -714,191 +720,181 @@ const handleSubmit = (e) => {
                   />
                 </div>
               </div> */}
+                  </TabPanel>
+                  <TabPanel value="2">
+                    <h4>Address</h4>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {" "}
+                        Attention{" "}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("attention")}
+                          value={values.attention}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-        </TabPanel>
-        <TabPanel value="2">
-         <h4>Address</h4>
-        <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                {" "}
-                  Attention {" "}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557"  onChange={handleChange("attention")}
-                    value={values.attention}
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        Country/Region {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("country")}
+                          value={values.country}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  Country/Region {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" 
-                    onChange={handleChange("country")}
-                    value={values.country}
-
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  Address {""}
-                </label>
-                <div className="col-lg-6">
-                  {/* <input
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        Address {""}
+                      </label>
+                      <div className="col-lg-6">
+                        {/* <input
                     id="ember557" value={name} onChange={handleChanges}
                     className="ember-text-field ember-view form-control"
                     type="text-area"
                   /> */}
 
-<TextareaAutosize
-      aria-label="Address"
-      minRows={3} onChange={handleChange("addre")}
-      value={values.addre}
-      placeholder="Enter Address here"
-      style={{ width: 500 }}
-    />
-                </div>
-              </div>
+                        <TextareaAutosize
+                          aria-label="Address"
+                          minRows={3}
+                          onChange={handleChange("addre")}
+                          value={values.addre}
+                          placeholder="Enter Address here"
+                          style={{ width: 500 }}
+                        />
+                      </div>
+                    </div>
 
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        City {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("city")}
+                          value={values.city}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  City {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" 
-                    onChange={handleChange("city")}
-                    value={values.city}
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        State {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("state")}
+                          value={values.state}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        Zip Code {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("code")}
+                          value={values.code}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  State {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557"  onChange={handleChange("state")}
-                    value={values.state}
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        Phone {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("phone")}
+                          value={values.phone}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
 
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
+                    <div className="row form-group">
+                      <label className="col-form-label col-lg-3">
+                        {""}
+                        Fax {""}
+                      </label>
+                      <div className="col-lg-6">
+                        <input
+                          id="ember557"
+                          onChange={handleChange("fax")}
+                          value={values.fax}
+                          className="ember-text-field ember-view form-control"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </TabPanel>
+                  <TabPanel value="3">Contact Persons</TabPanel>
+                  <TabPanel value="4">Custom Fields</TabPanel>
+                  <TabPanel value="5">Reporting Tags</TabPanel>
+                  <TabPanel value="6">
+                    <TextareaAutosize
+                      aria-label="minimum height"
+                      minRows={3}
+                      onChange={handleChange("textarea")}
+                      value={values.textarea}
+                      placeholder="Remarks for Internal Use"
+                      style={{ width: 500 }}
+                    />
+                  </TabPanel>
+                </TabContext>
+              </Box>
 
-
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  Zip Code {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" onChange={handleChange("code")}
-                    value={values.code}
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  Phone {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" onChange={handleChange("phone")}
-                    value={values.phone}
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-
-              <div className="row form-group">
-                <label className="col-form-label col-lg-3">
-                  {""}
-                  Fax {""}
-                </label>
-                <div className="col-lg-6">
-                  <input
-                    id="ember557" onChange={handleChange("fax")}
-                    value={values.fax}
-                    className="ember-text-field ember-view form-control"
-                    type="text"
-                  />
-                </div>
-              </div>
-
-        </TabPanel>
-        <TabPanel value="3">Contact Persons
-        
-        
-        
-        </TabPanel>
-        <TabPanel value="4">Custom Fields</TabPanel>
-        <TabPanel value="5">Reporting Tags</TabPanel>
-        <TabPanel value="6">
-        <TextareaAutosize
-      aria-label="minimum height"
-      minRows={3}  onChange={handleChange("textarea")}
-      value={values.textarea}
-      placeholder="Remarks for Internal Use"
-      style={{ width: 500 }}
-    />
-
-        </TabPanel>
-      </TabContext>
-    </Box>
-              
               <button
                 id="ember1447"
                 className="btn btn-primary ember-view"
-                type="submit">Save</button>
+                type="submit"
+              >
+                Save
+              </button>
               <Link href="/customer">
                 <button
                   id="ember1447"
                   className="btn btn-primary ember-view"
-                  type="submit" style={{marginLeft:"10px"}}
+                  type="submit"
+                  style={{ marginLeft: "10px" }}
                 >
-               
-                    <a >Go back </a>
-                  
-                  
+                  <a>Go back </a>
                 </button>
-                </Link>
-                
+              </Link>
             </form>
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }

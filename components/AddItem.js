@@ -10,10 +10,10 @@ export default function AddItem() {
   const customHandleClick = async (e) => {
     e.preventDefault();
 
-     const {user} = isAutheticated();
+    const { user } = isAutheticated();
     // const data = new FormData(event.currentTarget);
     let data = {
-      user_id:user._id,
+      user_id: user._id,
       unit: e.target.elements.unit.value,
       name: e.target.elements.name.value,
       type: e.target.elements.productType.value,
@@ -23,11 +23,10 @@ export default function AddItem() {
       purchase_description: e.target.elements.purchase_description.value,
     };
     console.log(data);
-    addItem(data).then((data)=>
-    console.log("saved"),
-    alert("Saved Succesfully")
-
-    )
+    addItem(data).then(
+      (data) => console.log("saved"),
+      alert("Saved Succesfully")
+    );
 
     // if (res.data.success) {
     //   window.location.replace("/items");
@@ -500,20 +499,16 @@ export default function AddItem() {
                     Cancel
                   </button>
                 </Link>
-                <div  className="goback">
-                <Link href="/items">
-                  
-                <button
-                  id="ember1447"
-                  className="btn btn-primary ember-view"
-                  type="submit" 
-                >
-               
-                    <a >Go back </a>
-                  
-                  
-                </button>
-                </Link>
+                <div className="goback">
+                  <Link href="/items">
+                    <button
+                      id="ember1447"
+                      className="btn btn-primary ember-view"
+                      type="submit"
+                    >
+                      <a>Go back </a>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

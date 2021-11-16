@@ -18,7 +18,7 @@ export default function Sales() {
 
   return (
     <div style={{ float: "right", marginRight: "20px" }}>
-      <div className="navba" >
+      <div className="navba">
         <button
           className="btn btn-primary newicon"
           data-ember-action=""
@@ -141,8 +141,8 @@ export default function Sales() {
                 style={{ paddingTop: "50px" }}
               >
                 In the
-                <span className="text-capitalize"> Sales Orders</span> section, you
-                can:
+                <span className="text-capitalize"> Sales Orders</span> section,
+                you can:
               </h4>
 
               <div className="icon align-text-bottom text-blue">
