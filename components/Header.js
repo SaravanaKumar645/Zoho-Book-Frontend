@@ -158,7 +158,7 @@ function Header(props) {
         ></img>
       </Toolbar>
       <Divider />
-      <List style={{ color: "white" }}>
+      <List>
         <ListItem
           button
           component={Link}
@@ -186,28 +186,26 @@ function Header(props) {
           />
         </ListItem>
         <ListItemButton
-          className={styles.List}
+          id={styles.List}
           color="white"
           onClick={(e) => handleCollapaseOpen(e, "items")}
         >
-          <ListItemIcon className={styles.iconList}>
+          <ListItemIcon id={styles.iconList}>
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText primary="Items" />
+          <ListItemText id={styles.iconList} primary="Items" />
           {collapseOpen[0].item ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={collapseOpen[0].item} timeout="auto" unmountOnExit>
           <List component="div">
             <ListItemButton
-              className={
-                tabPath === "/items" ? styles["ListFocused"] : styles["List"]
-              }
+              id={tabPath === "/items" ? styles["ListFocused"] : styles["List"]}
               sx={{ pl: 4 }}
               component={Link}
               href="/items"
             >
               <ListItemIcon
-                className={
+                id={
                   tabPath === "/items"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -216,7 +214,7 @@ function Header(props) {
                 <StarBorder />
               </ListItemIcon>
               <ListItemText
-                className={
+                id={
                   tabPath === "/items"
                     ? styles["iconListFocused"]
                     : styles["iconList"]
@@ -686,6 +684,7 @@ function Header(props) {
           {drawer}
         </Drawer>
         <Drawer
+          container={container}
           variant="permanent"
           sx={{
             display: { xs: "none", sm: "block" },
@@ -693,6 +692,7 @@ function Header(props) {
               boxSizing: "border-box",
               backgroundColor: "#3c3c47",
               width: drawerWidth,
+              color: "white",
             },
           }}
           open

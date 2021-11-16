@@ -20,6 +20,28 @@
   color: #1abc9c;
 }
 
+#List {
+  color: white;
+}
+#List:hover {
+  color: white;
+  background-color: #13b191;
+}
+#ListFocused {
+  color: #1abc9c;
+  background-color: black;
+}
+#ListFocused:hover {
+  opacity: 0.8;
+  background-color: black;
+}
+#iconList {
+  color: white;
+}
+#iconListFocused {
+  color: #1abc9c;
+}
+
 /* Header */
 .headerContent {
   display: flex;
